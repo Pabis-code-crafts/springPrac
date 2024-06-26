@@ -1,21 +1,23 @@
 CREATE TABLE questions (
     id SERIAL PRIMARY KEY,
-    question TEXT NOT NULL,
+    questionTitle TEXT NOT NULL,
     option1 TEXT NOT NULL,
     option2 TEXT NOT NULL,
     option3 TEXT NOT NULL,
-    rightanswer TEXT NOT NULL,
-    basis TEXT NOT NULL
+    option4 TEXT NOT NULL,
+    rightAnswer TEXT NOT NULL,
+    difficultylevel TEXT NOT NULL,
+    category TEXT NOT NULL
 );
 
-INSERT INTO questions (question, option1, option2, option3, rightanswer, basis) VALUES
-('What is 2 + 2?', '3', '4', '5', '4', 'Math'),
-('What is the square root of 9?', '2', '3', '4', '3', 'Math'),
-('What is 10 / 2?', '2', '5', '10', '5', 'Math'),
-('What is 3 * 3?', '6', '9', '12', '9', 'Math'),
-('What is the smallest prime number?', '1', '2', '3', '2', 'Math'),
-('What color is the sky?', 'Blue', 'Green', 'Red', 'Blue', 'Science'),
-('What is the boiling point of water?', '90°C', '100°C', '110°C', '100°C', 'Science'),
-('Which planet is known as the Red Planet?', 'Earth', 'Mars', 'Jupiter', 'Mars', 'Science'),
-('What is H2O commonly known as?', 'Oxygen', 'Water', 'Carbon Dioxide', 'Water', 'Science'),
-('What is the chemical symbol for gold?', 'Au', 'Ag', 'Pb', 'Au', 'Science');
+INSERT INTO questions (questionTitle, option1, option2, option3, option4, rightAnswer, difficultylevel, category) VALUES
+('What is 2 + 2?', '3', '4', '5', 'None', '4', 'Easy', 'Math'),
+('What is the square root of 9?', '2', '3', '4', 'None', '3', 'Easy', 'Math'),
+('What is 10 / 2?', '2', '5', '10', 'None', '5', 'Easy', 'Math'),
+('What is 3 * 3?', '6', '9', '12', 'None', '9', 'Easy', 'Math'),
+('What is the capital of France?', 'Berlin', 'Madrid', 'Paris', 'None', 'Paris', 'Medium', 'Geography'),
+('What is the largest planet in our solar system?', 'Earth', 'Mars', 'Jupiter', 'Saturn', 'Jupiter', 'Medium', 'Science'),
+('Who wrote "Hamlet"?', 'Charles Dickens', 'Jane Austen', 'William Shakespeare', 'None', 'William Shakespeare', 'Hard', 'Literature'),
+('What is the chemical symbol for water?', 'H2', 'O2', 'H2O', 'None', 'H2O', 'Easy', 'Science'),
+('Who was the first president of the United States?', 'Abraham Lincoln', 'George Washington', 'Thomas Jefferson', 'None', 'George Washington', 'Easy', 'History'),
+('What is the boiling point of water?', '90°C', '100°C', '110°C', 'None', '100°C', 'Easy', 'Science');

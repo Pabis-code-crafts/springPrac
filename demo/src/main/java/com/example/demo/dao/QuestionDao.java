@@ -1,11 +1,19 @@
 package com.example.demo.dao;
 
+
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
-import com.example.demo.model.Question; // Ensure the package is correct
+import com.example.demo.model.Question;
+
+import java.util.List;
 
 @Repository
 public interface QuestionDao extends JpaRepository<Question, Integer> {
-    // Additional query methods (if any) can be defined here
+
+    List<Question> findByCategory(String category);
+
+    @Query(value = "SELECT * FROM question q Where q.category=:category ORDER BY RANDOM() LIMIT :numQ", nativeQuery = true)
+    List<org.aspectj.weaver.patterns.TypePatternQuestions.Question> findRandomQuestionsByCategory(String category, int numQ);
 }
